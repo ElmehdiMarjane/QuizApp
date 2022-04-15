@@ -85,7 +85,7 @@ public class Register extends AppCompatActivity {
                     startActivity(new Intent(Register.this,MainActivity.class));
                     finish();
                 }else{
-
+                    progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(),task.getException().toString(),Toast.LENGTH_SHORT).show();
                 }
             }
