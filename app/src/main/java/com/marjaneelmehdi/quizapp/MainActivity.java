@@ -2,6 +2,7 @@ package com.marjaneelmehdi.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +11,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
     //Step 1: Declaration
     EditText etLogin, etPassword;
     Button bLogin;
     TextView tvRegister;
+    FirebaseAuth fAuth;
+    FirebaseUser fUser;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         bLogin = (Button) findViewById(R.id.bLogin);
         tvRegister = (TextView) findViewById(R.id.tvRegister);
+        progressDialog=new ProgressDialog(this);
+        fAuth=FirebaseAuth.getInstance();
+        fUser=fAuth.getCurrentUser();
         //Step 3: Association de listeners
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
