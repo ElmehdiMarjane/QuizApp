@@ -48,11 +48,13 @@
             android:layout_weight="1"
             android:text="Non" />
     </RadioGroup>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:textColor="#fff"
+        android:background="@drawable/custom_button"
         android:layout_marginTop="20dp"/>
     <ImageView
         android:layout_width="50dp"
